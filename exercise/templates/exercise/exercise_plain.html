@@ -44,7 +44,7 @@
                     {% include 'exercise/_warnings_overlay.html' %}
                 {% endif %}
 
-                {% if exercise.is_submittable %}
+                {% if exercise.is_submittable and not exercisecollection %}
                     <nav class="exercise-summary navbar navbar-default">
                         <ul class="nav navbar-nav exercise-nav">
                             <li>
@@ -128,6 +128,10 @@
                             </a>
                         {% endif %}
                     </nav>
+                {% endif %}
+
+                {% if exercisecollection %}
+                    {% include 'exercise/_exercisecollection.html' %}
                 {% endif %}
 
                 <div
